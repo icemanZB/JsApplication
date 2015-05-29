@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>自动生成多个V字型</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oBtn = document.getElementById('btn');
+            var oUl = document.getElementById('list');
+            var str = "";
+            var num = 0;
+
+            oBtn.onclick = function () {
+                oUl.innerHTML = "";
+                str = "";
+                if (num === 0) {
+                    num++;
+                    for (var i = 0; i < 5; i++) {
+                        if (i > 1) {
+                            str += "<li style='left:" + i * 55 + "px;top:" + (i - 2) * 55 + "px;'>" + i + "</li>";
+                        } else {
+                            str += "<li style='left:" + i * 55 + "px;top:" + 110 / (i + 1) + "px;'>" + i + "</li>";
+                        }
+                    }
+                } else if (num === 3) {
+                    num = 0;
+                    for (var i = 0; i < 5; i++) {
+                        if (i > 1) {
+                            str += "<li style='left:" + (i - 2) * 55 + "px;top: " + i * 55 + "px;'>" + i + "</li>";
+                        } else {
+                            str += "<li style='left:" + 110 / (i + 1) + "px;top: " + i * 55 + "px;'>" + i + "</li>";
+                        }
+                    }
+                } else if (num === 1) {
+                    num++;
+                    for (var i = 0; i < 5; i++) {
+                        if (i > 2) {
+                            str += "<li style='left:" + i % 2 * 55 + "px;top:" + i * 55 + "px;'>" + i + "</li>";
+                        } else {
+                            str += "<li style='left:" + i * 55 + "px;top:" + i * 55 + "px;'>" + i + "</li>";
+                        }
+                    }
+                } else if (num === 2) {
+                    num++;
+                    for (var i = 0; i < 5; i++) {
+                        if (i > 2) {
+                            str += "<li style='left:" + i * 55 + "px;top: " + (i % 2) * 55 + "px;'>" + i + "</li>";
+                        } else {
+                            str += "<li style='left:" + i * 55 + "px;top: " + i * 55 + "px;'>" + i + "</li>";
+                        }
+                    }
+                }
+
+                oUl.innerHTML = str;
+            };
+
+        };
+    </script>
+</head>
+<body>
+<input id="btn" type="button" value="自动生成V字型"/>
+<ul id="list">
+    <!--
+    <li style="left: 0px;top: 110px;">0</li>  2
+    <li style="left: 55px;top: 55px;">1</li>  1
+    <li style="left: 110px;top: 0px;">2</li>  0
+    <li style="left: 165px;top: 55px;">3</li> 1
+    <li style="left: 220px;top: 110px;">4</li>2
+
+    <li style="left: 0px;top: 0;">0</li>
+    <li style="left: 55px;top: 55px;">1</li>
+    <li style="left: 110px;top: 110px;">2</li>
+    <li style="left: 55px;top: 165px;">3</li>
+    <li style="left: 0px;top: 220px;">4</li>
+
+    <li style="left: 110px;top: 0;">0</li>
+    <li style="left: 55px;top: 55px;">1</li>
+    <li style="left: 0px;top: 110px;">2</li>
+    <li style="left: 55px;top: 165px;">3</li>
+    <li style="left: 110px;top: 220px;">4</li>
+    -->
+</ul>
+</body>
+</html>
