@@ -14,7 +14,7 @@
             oBtn.onclick = function () {
                 for (var i = 0; i < 10; i++) {
                     var moveL = i * 55; // 自定义的数值
-                    var bgColor = arr[i % arr.length];
+                    var bgColor = arr[i % arr.length]; // 0 1 2 3 4 依次对应数组的值
                     str += "<li style='left:" + moveL + "px; background:" + bgColor + ";'>" + i + "</li>";
                 }
 
@@ -25,8 +25,8 @@
     </script>
 </head>
 <body>
-<input id="btn" type="button" value="自动生成10个LI"/>
-<ul id="list">
-</ul>
+    <input id="btn" type="button" value="自动生成10个LI"/>
+    <ul id="list">
+    </ul>
 </body>
 </html>
