@@ -1,0 +1,51 @@
+.clear {
+    zoom: 1;
+}
+
+.clear:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+#left {
+    width: 500px;
+    height: 450px;
+    background: orange;
+    float: left;
+    text-align: center;
+}
+
+#left img {
+    width: 480px;
+    height: 380px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#right {
+    width: 300px;
+    height: 450px;
+    background: green;
+    float: left;
+    text-align: center;
+}
+
+#right img {
+    width: 280px;
+    height: 380px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#left h2, #right h2 {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+#left p, #right p {
+    text-align: left;
+    margin: 0;
+    padding: 0 0 0 10px;
+}
