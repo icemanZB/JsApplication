@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>自动生成V字型</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oBtn = document.getElementById('btn');
+            var oUl = document.getElementById('list');
+            var str = "";
+            oBtn.onclick = function () {
+                oUl.innerHTML = "";
+                for (var i = 0; i < 5; i++) {
+                    if (i > 2) {
+                        str += "<li style='left:" + i * 55 + "px;top: " + (i % 2) * 55 + "px;'>" + i + "</li>";
+                    } else {
+                        str += "<li style='left:" + i * 55 + "px;top: " + i * 55 + "px;'>" + i + "</li>";
+                    }
+                }
+
+                oUl.innerHTML = str;
+            };
+        };
+    </script>
+</head>
+<body>
+<input id="btn" type="button" value="自动生成V字型"/>
+<ul id="list">
+</ul>
+</body>
+</html>
