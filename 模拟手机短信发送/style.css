@@ -1,0 +1,67 @@
+img {
+    border-radius: 50%;
+}
+.wrap {
+    width: 400px;
+    height: 600px;
+    border: 1px solid #ccc;
+    margin: auto;
+}
+.box {
+    padding: 20px;
+    height: 500px;
+    overflow: auto;
+}
+.input-box {
+    height: 40px;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+}
+input[type=text] {
+    height: 36px;
+    border: 1px solid #CCCCCC;
+    width: 250px;
+    vertical-align: top;  /* ∂•≤ø∂‘∆Î */
+}
+input[type=submit] {
+    width: 70px;
+    background: #ff4b4b;
+    height: 40px;
+    border: 0;  /* ±ﬂøÚ…Ë÷√Œ™0 */
+    vertical-align: top;
+    color: #fff;
+}
+.user-left,
+.user-right {
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+.user-left img {
+    float: left;
+    width: 50px;
+    height: 50px;
+}
+.user-left span,
+.user-right span {
+    margin-left: 65px;
+    padding: 5px;
+    background: #FF4B4B;
+    color: #fff;
+    font: 12px/1.5 "Œ¢»Ì—≈∫⁄";
+    display: block;
+    border-radius: 5px;
+}
+.user-right img {
+    float: right;
+    width: 50px;
+    height: 50px;
+}
+.user-right span {
+    margin: 0 65px 0 0;
+    background: #53c8ee;
+}
+
+.input-box img{
+    width: 40px;
+    height: 40px;
+}

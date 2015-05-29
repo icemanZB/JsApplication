@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>模拟手机短信发送</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oBox = document.getElementById('box'),
+                    oImg = oBox.getElementsByTagName('img')[0],
+                    oBtn = document.getElementById('btn'),
+                    oContent = document.getElementById('content'),
+                    oVal = document.getElementById('text'),
+                    oFloat = "user-left",
+                    oUrl = "img/tx-pic1.jpg",
+                    bOFF = false;
+
+            oImg.onclick = function () {
+                if (bOFF) {
+                    this.src = "img/tx-pic1.jpg";
+                    bOFF = false;
+                } else {
+                    this.src = "img/tx-pic2.jpg";
+                    bOFF = true;
+                }
+            };
+
+            oBtn.onclick = function () {
+                if (oVal.value == "") {
+                    alert("亲！亲填写内容哟！");
+                    return;
+                } else {
+                    if (bOFF) {
+                        oFloat = "user-right";
+                        oUrl = "img/tx-pic2.jpg";
+                    } else {
+                        oFloat = "user-left";
+                        oUrl = "img/tx-pic1.jpg";
+                    }
+                }
+
+                var str='<div class="' + oFloat + '"><img src="' + oUrl + '" />';
+                    str+='<span>' + oVal.value + '</span></div>';
+
+                oContent.innerHTML = str + oContent.innerHTML;
+                oVal.value = "";
+            };
+        };
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <div class="box" id="content">
+        <!-- <div class="user-left">
+             <img src="img/tx-pic1.jpg" />
+             <span></span>
+         </div>
+         <div class="user-right">
+             <img src="img/tx-pic2.jpg" />
+             <span></span>
+         </div>-->
+    </div>
+    <div class="input-box" id="box">
+        <img src="img/tx-pic1.jpg"/>
+        <input type="text" id="text" />
+        <input type="submit" id="btn" value="发送"/>
+    </div>
+</div>
+</body>
+</html>
