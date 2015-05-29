@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>自动生成10个LI</title>
+    <link rel="stylesheet" href="style.css"/>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oBtn = document.getElementById('btn');
+            var oUl=document.getElementById('list');
+            var str = "";
+            var arr = ['red', 'orange', 'yellow', 'green', 'blue'];
+
+            oBtn.onclick = function () {
+                for (var i = 0; i < 10; i++) {
+                    var moveL = i * 55; // 自定义的数值
+                    var bgColor = arr[i % arr.length];
+                    str += "<li style='left:" + moveL + "px; background:" + bgColor + ";'>" + i + "</li>";
+                }
+
+                oUl.innerHTML=str;
+
+            };
+        };
+    </script>
+</head>
+<body>
+<input id="btn" type="button" value="自动生成10个LI"/>
+<ul id="list">
+</ul>
+</body>
+</html>
