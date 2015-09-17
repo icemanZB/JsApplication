@@ -10,7 +10,7 @@ img {
 .box {
     padding: 20px;
     height: 500px;
-    overflow: auto;
+    overflow: auto;  /* 自动会出现滚动条 */
 }
 .input-box {
     height: 40px;

@@ -12,7 +12,6 @@
                     oContent = document.getElementById('content'),
                     oVal = document.getElementById('text'),
                     oFloat = "user-left",
-                    oUrl = "img/tx-pic1.jpg",
                     bOFF = false;
 
             oImg.onclick = function () {
@@ -26,21 +25,16 @@
             };
 
             oBtn.onclick = function () {
-                if (oVal.value == "") {
+                if (oVal.value.replace(/\s*/g, "") == '') {
                     alert("亲！亲填写内容哟！");
                     return;
                 } else {
-                    if (bOFF) {
-                        oFloat = "user-right";
-                        oUrl = "img/tx-pic2.jpg";
-                    } else {
-                        oFloat = "user-left";
-                        oUrl = "img/tx-pic1.jpg";
-                    }
+                    bOFF ? oFloat = "user-right" : oFloat = "user-left";
                 }
 
-                var str='<div class="' + oFloat + '"><img src="' + oUrl + '" />';
-                    str+='<span>' + oVal.value + '</span></div>';
+
+                var str = '<div class="' + oFloat + '"><img src="' + oImg.src + '" />';
+                str += '<span>' + oVal.value + '</span></div>';
 
                 oContent.innerHTML = str + oContent.innerHTML;
                 oVal.value = "";
@@ -58,11 +52,11 @@
          <div class="user-right">
              <img src="img/tx-pic2.jpg" />
              <span></span>
-         </div>-->
+         </div> -->
     </div>
     <div class="input-box" id="box">
         <img src="img/tx-pic1.jpg"/>
-        <input type="text" id="text" />
+        <input type="text" id="text"/>
         <input type="submit" id="btn" value="发送"/>
     </div>
 </div>
