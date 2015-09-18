@@ -12,21 +12,13 @@
             var arr = ['red', 'yellow', 'blue', 'green'];
             var str = "";
             oBtn.onclick = function () {
+                // 向下取整是为了换行处理 1~9 /10 = 0.1...  以此类推去掉小数部分
+                // i%10  就是遇到10变成0
                 for (var i = 0; i < 100; i++) {
-                    str += '<li style="background: ' + arr[i % arr.length] + ';">' + i + '</li>';
+                    str += '<li style="background: ' + arr[i % arr.length] + '; ' +
+                    'top: ' + Math.floor(i / 10) * 55 + 'px; left:' + (i % 10) * 55 + 'px  ">' + i + '</li>';
                 }
                 oUl.innerHTML = str;
-
-                for (var i = 0; i < aLi.length; i++) {
-                    aLi[i].style.left = (i % 10) * 55 + "px";
-                    if (i % 10 == 0) {
-                        // 10个换一行
-                        aLi[i].style.top = i * 6 + "px";
-                    } else {
-                        // 获取到上一个兄弟节点的top值
-                        aLi[i].style.top = aLi[i].previousSibling.style.top;
-                    }
-                }
             }
         };
     </script>

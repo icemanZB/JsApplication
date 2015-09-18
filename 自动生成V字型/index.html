@@ -9,10 +9,11 @@
             var oBtn = document.getElementById('btn');
             var oUl = document.getElementById('list');
             var str = "";
+            var len = 5;
             oBtn.onclick = function () {
                 oUl.innerHTML = "";
-                for (var i = 0; i < 5; i++) {
-                    if (i > 2) {
+                for (var i = 0; i < len; i++) {
+                    if (i > Math.floor(len / 2)) {  // 2
                         str += "<li style='left:" + i * 55 + "px;top: " + (i % 2) * 55 + "px;'>" + i + "</li>";
                     } else {
                         str += "<li style='left:" + i * 55 + "px;top: " + i * 55 + "px;'>" + i + "</li>";
